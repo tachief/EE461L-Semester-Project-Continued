@@ -25,6 +25,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -49,20 +50,6 @@
                 android:cropToPadding="false"
                 app:srcCompat="@drawable/recipez_logo" />
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/usernameField"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
-            android:ems="10"
-            android:hint="Username:"
-            android:inputType="textPersonName"
-            android:textColor="#23272a"
-            android:textColorHint="#23272a"
-            android:textColorLink="@color/colorPrimary"
-            tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="234dp" />
 
         <EditText
             android:id="@+id/emailField"
