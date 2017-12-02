@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">RecipZ</string>
+    <string name="app_name">RecipEZ</string>
+    <string name="loginError">Unable to Login.</string>
 </resources>
