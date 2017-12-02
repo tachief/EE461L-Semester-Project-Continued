@@ -61,8 +61,9 @@ public class SearchActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {    //creates search button
             public void onClick(View view) {
                 String out = "test";
+                String url = parseUserInput(editTextSearchTerms.getText().toString());
                 try{
-                    out = getRecipesString(sURL);
+                    out = getRecipesString(url);
                 } catch(Exception e) {
                     Log.e("bad url", e.toString());
                 }
@@ -92,14 +93,15 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
-    public String parseUserInput(String in) {       //parses user input into appropriate url and returns url as a string
+    public String parseUserInput(String in) {       //parses user input into appropriate url and returns url as a string\
+        Log.e("raw in", in);
         String base = "http://food2fork.com/api/search?key=02a03461cd295f9dcf90a669c961e2fd&q=";
         String end = "&count=10";
-        CharSequence space = "c";
+        CharSequence space = " ";
         CharSequence spaceReplace = "%20";
         in = in.trim();
         in = in.replace(space, spaceReplace);
-
+        Log.e("end url", base+in+end);
         return base + in + end;
     }
 
