@@ -1,10 +1,12 @@
 package com.ee4461l_project.recipz;
 
+import java.io.Serializable;
+
 /**
  * Created by tachief on 12/1/17.
  */
 
-public class SearchResponse {
+public class SearchResponse implements Serializable{
     int count;
     Recipes[] recipes;
 
@@ -23,12 +25,13 @@ public class SearchResponse {
 
 }
 
-class Recipes {
+class Recipes implements Serializable{
     String publisher;
     String f2f_url;
     String title;
     String source_url;
     String recipe_id;
+    String image_url;
     Double social_rank;
     String publsiher_url;
 
@@ -62,6 +65,8 @@ class Recipes {
     public void setRecipe_id(String recipe_id) {
         this.recipe_id = recipe_id;
     }
+    public String getImage_url() { return image_url; }
+    public void setImage_url(String image_url) { this.image_url = image_url; }
     public Double getSocial_rank() {
         return social_rank;
     }
