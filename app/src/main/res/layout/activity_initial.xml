@@ -10,11 +10,10 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="505dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginStart="1dp"
+        android:layout_marginTop="8dp"
         android:gravity="center"
         android:orientation="vertical"
         android:paddingHorizontal="40dp"
@@ -94,8 +93,7 @@
             android:text="Login!"
             android:textColor="#23272a"
             tools:layout_editor_absoluteX="8dp"
-            tools:layout_editor_absoluteY="377dp"
-            />
+            tools:layout_editor_absoluteY="377dp" />
 
         <Button
             android:id="@+id/registerButton"
