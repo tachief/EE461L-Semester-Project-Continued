@@ -48,7 +48,8 @@ class Recipes implements Serializable{
         this.f2f_url = f2f_url;
     }
     public String getTitle() {
-        return title;
+        CharSequence why = "&#8217;";
+        return title.replace(why, "'");
     }
     public void setTitle(String title) {
         this.title = title;

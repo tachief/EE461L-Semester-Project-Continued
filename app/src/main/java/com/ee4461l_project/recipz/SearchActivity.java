@@ -100,8 +100,11 @@ public class SearchActivity extends AppCompatActivity {
         String end = "&count=10";
         CharSequence space = " ";
         CharSequence spaceReplace = "%20";
+        CharSequence apos = "'";
+        CharSequence aposReplace = "%27";
         in = in.trim();
         in = in.replace(space, spaceReplace);
+        in = in.replace(apos, aposReplace);
         Log.e("end url", base+in+end);
         return base + in + end;
     }
