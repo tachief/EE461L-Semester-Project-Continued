@@ -49,7 +49,9 @@ class Recipes implements Serializable{
     }
     public String getTitle() {
         CharSequence apos = "&#8217;";
-        return title.replace(apos, "'");
+        CharSequence ampersand = "&amp;";
+        return (title.replace(apos, "'")).replace(ampersand, "&");
+
     }
     public void setTitle(String title) {
         this.title = title;
