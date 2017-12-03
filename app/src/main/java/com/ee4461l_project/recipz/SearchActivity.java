@@ -78,8 +78,9 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 String out = "test";
+                String url = parseUserInput(editTextSearchTerms.getText().toString());
                 try{
-                    out = getRecipesString(sURL);
+                    out = getRecipesString(url);
                 } catch(Exception e) {
                     Log.e("bad url", e.toString());
                 }
