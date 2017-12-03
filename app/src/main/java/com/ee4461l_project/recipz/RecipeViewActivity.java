@@ -18,9 +18,8 @@ public class RecipeViewActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipe_view);
-        Intent intent = new Intent();
+        Intent intent = getIntent();
         URL = intent.getStringExtra("sourceURL");
-        //URL = "https://www.allrecipes.com/recipe/7934/blueberry-cheesecake/";
         webview = (WebView)findViewById(R.id.webView);
         Back = (Button)findViewById(R.id.Back);
 
@@ -33,7 +32,7 @@ public class RecipeViewActivity extends AppCompatActivity {
 
     public void sendMessage(View v){
         if(v == Back) {
-            startActivity(new Intent(RecipeViewActivity.this, SearchActivity.class));
+            startActivity(new Intent(RecipeViewActivity.this, BrowseActivity.class));
         }
     }
 }

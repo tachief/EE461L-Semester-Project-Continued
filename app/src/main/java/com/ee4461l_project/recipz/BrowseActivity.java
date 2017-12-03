@@ -6,25 +6,184 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.io.InputStream;
 
 public class BrowseActivity extends AppCompatActivity {
-
+    TextView recipeTitles[] = new TextView[10];
+    CardView recipeCards[] = new CardView[10];
+    Recipes[] rec;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
 
+        recipeTitles[0] = findViewById(R.id.recipeTitle0);
+        recipeTitles[1] = findViewById(R.id.recipeTitle1);
+        recipeTitles[2] = findViewById(R.id.recipeTitle2);
+        recipeTitles[3] = findViewById(R.id.recipeTitle3);
+        recipeTitles[4] = findViewById(R.id.recipeTitle4);
+        recipeTitles[5] = findViewById(R.id.recipeTitle5);
+        recipeTitles[6] = findViewById(R.id.recipeTitle6);
+        recipeTitles[7] = findViewById(R.id.recipeTitle7);
+        recipeTitles[8] = findViewById(R.id.recipeTitle8);
+        recipeTitles[9] = findViewById(R.id.recipeTitle9);
+
+        recipeCards[0] = findViewById(R.id.cardView0);
+        recipeCards[1] = findViewById(R.id.cardView1);
+        recipeCards[2] = findViewById(R.id.cardView2);
+        recipeCards[3] = findViewById(R.id.cardView3);
+        recipeCards[4] = findViewById(R.id.cardView4);
+        recipeCards[5] = findViewById(R.id.cardView5);
+        recipeCards[6] = findViewById(R.id.cardView6);
+        recipeCards[7] = findViewById(R.id.cardView7);
+        recipeCards[8] = findViewById(R.id.cardView8);
+        recipeCards[9] = findViewById(R.id.cardView9);
+
         Intent intent = getIntent();
         Bundle arg = intent.getBundleExtra("RECIPES");
-        Recipes[] rec = (Recipes[])arg.getSerializable("LIST");
-        Log.e("made it?", rec[0].getTitle());
+        rec = (Recipes[])arg.getSerializable("LIST");
+        //Log.e("made it?", rec[0].getTitle());
 
-        new DownloadImageTask((ImageView) findViewById(R.id.imageView3))
+
+
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage0))
                 .execute(rec[0].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage1))
+                .execute(rec[1].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage2))
+                .execute(rec[2].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage3))
+                .execute(rec[3].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage4))
+                .execute(rec[4].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage5))
+                .execute(rec[5].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage6))
+                .execute(rec[6].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage7))
+                .execute(rec[7].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage8))
+                .execute(rec[8].getImage_url());
+        new DownloadImageTask((ImageView) findViewById(R.id.recipeImage9))
+                .execute(rec[9].getImage_url());
+
+        recipeCards[0].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[0]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[0].getSource_url());
+                            startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+        recipeCards[1].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[1]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[1].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+        recipeCards[2].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[2]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[2].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+
+        recipeCards[3].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[3]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[3].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+
+        recipeCards[4].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[4]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[4].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+
+        recipeCards[5].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[5]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[5].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+
+        recipeCards[6].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[6]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[6].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+
+        recipeCards[7].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[7]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[7].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+
+        recipeCards[8].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[8]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[8].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+        recipeCards[9].setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(view == recipeCards[9]) {
+                    Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
+                    changeToRecipeViewActivity.putExtra("sourceURL", rec[9].getSource_url());
+                    startActivity(changeToRecipeViewActivity);
+                }
+            }
+        });
+
+        for(int i = 0; i <= 9; i++) {
+            recipeTitles[i].setText(rec[i].getTitle());
+        }
+
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
