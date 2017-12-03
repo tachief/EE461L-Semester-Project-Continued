@@ -20,6 +20,7 @@ public class BrowseActivity extends AppCompatActivity {
     CardView recipeCards[] = new CardView[10];
     TextView recipePublishers[] = new TextView[10];
     TextView recipeRanks[] = new TextView[10];
+    SearchResponse res;
     Recipes[] rec;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,8 @@ public class BrowseActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle arg = intent.getBundleExtra("RECIPES");
-        rec = (Recipes[])arg.getSerializable("LIST");
+        res = (SearchResponse)arg.getSerializable("LIST");
+        rec = res.getRecipes();
         //Log.e("made it?", rec[0].getTitle());
 
 

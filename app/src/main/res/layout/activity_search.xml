@@ -48,9 +48,10 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:layout_gravity="bottom|center"
+            android:layout_marginBottom="0dp"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="0dp"
             android:gravity="bottom"
             android:orientation="vertical">
 
@@ -75,6 +76,17 @@
                 android:layout_weight="1"
                 android:backgroundTint="#bf743f"
                 android:text="Look For RecipES!"
+                app:layout_constraintBaseline_toBaselineOf="@+id/inputEditText"
+                app:layout_constraintStart_toEndOf="@+id/inputEditText" />
+
+            <Button
+                android:id="@+id/favoritesButton"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:backgroundTint="#bf743f"
+                android:text="Favorites"
                 app:layout_constraintBaseline_toBaselineOf="@+id/inputEditText"
                 app:layout_constraintStart_toEndOf="@+id/inputEditText" />
         </LinearLayout>

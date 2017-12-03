@@ -22,12 +22,10 @@ import java.util.concurrent.ExecutionException;
 
 
 public class SearchActivity extends AppCompatActivity {
-    EditText editTextSearchTerms;
-    Button searchButton;
-    static String sURL = "http://food2fork.com/api/search?key=02a03461cd295f9dcf90a669c961e2fd&q=shredded%20chicken";
-    GetRecipeFeed recipeGetter = new GetRecipeFeed();
-    String raw;
-
+    private EditText editTextSearchTerms;
+    private Button searchButton;
+    private Button favoritesButton;
+    private static String sURL = "http://food2fork.com/api/search?key=02a03461cd295f9dcf90a669c961e2fd&q=shredded%20chicken";
 
     class GetRecipeFeed extends AsyncTask<URL, Void, String> {
         @Override
@@ -57,6 +55,7 @@ public class SearchActivity extends AppCompatActivity {
         setContentView(R.layout.activity_search);
         editTextSearchTerms = findViewById(R.id.inputEditText);
         searchButton = findViewById(R.id.searchButton);
+        favoritesButton = findViewById(R.id.favoritesButton);
 
         searchButton.setOnClickListener(new View.OnClickListener() {    //creates search button
             public void onClick(View view) {
@@ -70,7 +69,15 @@ public class SearchActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 SearchResponse res = gson.fromJson(out, SearchResponse.class);
                 Recipes[] rec = res.getRecipes();
-                send(rec);
+                send(res);
+            }
+        });
+
+        favoritesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                toFavorites();
+
             }
         });
 
@@ -87,7 +94,7 @@ public class SearchActivity extends AppCompatActivity {
                 Gson gson = new Gson();
                 SearchResponse res = gson.fromJson(out, SearchResponse.class);
                 Recipes[] rec = res.getRecipes();
-                send(rec);
+                send(res);
                 return true;
             }
         });
@@ -116,7 +123,7 @@ public class SearchActivity extends AppCompatActivity {
         return feed.execute(new URL[] {s}).get();
     }
     //sends recipes[] to BrowseActivity
-    public void send(Recipes[] results) {
+    public void send(SearchResponse results) {
         Intent intent = new Intent(this, BrowseActivity.class);
         Bundle arg = new Bundle();
         arg.putSerializable("LIST", results);
@@ -124,4 +131,13 @@ public class SearchActivity extends AppCompatActivity {
 
         startActivity(intent);
     }
+    //takes user to favorites activity
+    public void toFavorites() {
+        Intent intent = new Intent(this, FavoritesActivity.class);
+        startActivity(intent);
+
+    }
+
+
+
 }
