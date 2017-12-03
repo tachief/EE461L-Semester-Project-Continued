@@ -88,7 +88,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginTop="40dp"
-            android:backgroundTint="#bf743f"
+            android:backgroundTint="#23272a"
             android:gravity="bottom|center_horizontal"
             android:text="Login!"
             android:textColor="#23272a"

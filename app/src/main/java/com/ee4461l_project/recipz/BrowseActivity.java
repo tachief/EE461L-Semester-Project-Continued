@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -20,8 +21,11 @@ public class BrowseActivity extends AppCompatActivity {
     CardView recipeCards[] = new CardView[10];
     TextView recipePublishers[] = new TextView[10];
     RatingBar recipeRanks[] = new RatingBar[10];
+    Button nextButton;
     SearchResponse res;
     Recipes[] rec;
+    static String searchParams;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -73,12 +77,24 @@ public class BrowseActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         Bundle arg = intent.getBundleExtra("RECIPES");
+        searchParams = intent.getStringExtra("SEARCH_PARAMS");
         res = (SearchResponse)arg.getSerializable("LIST");
+
         rec = res.getRecipes();
-        //Log.e("made it?", rec[0].getTitle());
 
+        updateUI();
 
+        nextButton = findViewById(R.id.nextPageBtn);
+        nextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+            }
+        });
+
+    }
+
+    private void updateUI() {
         new DownloadImageTask((ImageView) findViewById(R.id.recipeImage0))
                 .execute(rec[0].getImage_url());
         new DownloadImageTask((ImageView) findViewById(R.id.recipeImage1))
@@ -106,7 +122,7 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[0]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[0].getSource_url());
-                            startActivity(changeToRecipeViewActivity);
+                    startActivity(changeToRecipeViewActivity);
                 }
             }
         });
@@ -212,7 +228,6 @@ public class BrowseActivity extends AppCompatActivity {
             recipePublishers[i].setText(rec[i].getPublisher());
             recipeRanks[i].setRating((float) (rec[i].getSocial_rank()/20.0));
         }
-
     }
 
     private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
@@ -239,4 +254,5 @@ public class BrowseActivity extends AppCompatActivity {
             bmImage.setImageBitmap(result);
         }
     }
+
 }

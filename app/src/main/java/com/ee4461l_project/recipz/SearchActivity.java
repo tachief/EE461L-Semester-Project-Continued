@@ -2,8 +2,8 @@ package com.ee4461l_project.recipz;
 
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -13,7 +13,6 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 
-import java.io.Serializable;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLConnection;
@@ -60,7 +59,7 @@ public class SearchActivity extends AppCompatActivity {
         searchButton.setOnClickListener(new View.OnClickListener() {    //creates search button
             public void onClick(View view) {
                 String out = "test";
-                String url = parseUserInput(editTextSearchTerms.getText().toString());
+                String url = parseUserInput(editTextSearchTerms.getText().toString(), 0);
                 try{
                     out = getRecipesString(url);
                 } catch(Exception e) {
@@ -85,7 +84,7 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent) {
                 String out = "test";
-                String url = parseUserInput(editTextSearchTerms.getText().toString());
+                String url = parseUserInput(editTextSearchTerms.getText().toString(), 0);
                 try{
                     out = getRecipesString(url);
                 } catch(Exception e) {
@@ -101,10 +100,11 @@ public class SearchActivity extends AppCompatActivity {
 
     }
 
-    public String parseUserInput(String in) {       //parses user input into appropriate url and returns url as a string\
+    public String parseUserInput(String in, int p) {       //parses user input into appropriate url and returns url as a string\
         Log.e("raw in", in);
         String base = "http://food2fork.com/api/search?key=02a03461cd295f9dcf90a669c961e2fd&q=";
         String end = "&count=10";
+        String page = "&page=" + p;
         CharSequence space = " ";
         CharSequence spaceReplace = "%20";
         CharSequence apos = "'";
@@ -112,8 +112,8 @@ public class SearchActivity extends AppCompatActivity {
         in = in.trim();
         in = in.replace(space, spaceReplace);
         in = in.replace(apos, aposReplace);
-        Log.e("end url", base+in+end);
-        return base + in + end;
+        Log.e("end url", base+in+end+page);
+        return base + in + end + page;
     }
 
     //gets json string from url
@@ -128,7 +128,7 @@ public class SearchActivity extends AppCompatActivity {
         Bundle arg = new Bundle();
         arg.putSerializable("LIST", results);
         intent.putExtra("RECIPES", arg);
-
+        intent.putExtra("SEARCH_PARAMS", editTextSearchTerms.getText().toString());
         startActivity(intent);
     }
     //takes user to favorites activity
