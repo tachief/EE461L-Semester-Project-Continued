@@ -49,11 +49,11 @@ public class InitialActivity extends AppCompatActivity implements View.OnClickLi
         super.onStart();
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
-//        if(currentUser != null) {
-//            //user is already logged in, forward them to next activity
-//            Intent changeToSearchActivity = new Intent(getApplicationContext(), SearchActivity.class);
-//            startActivity(changeToSearchActivity);
-//        }
+        if(currentUser != null) {
+            //user is already logged in, forward them to next activity
+            Intent changeToSearchActivity = new Intent(getApplicationContext(), SearchActivity.class);
+            startActivity(changeToSearchActivity);
+        }
     }
 
     public void createAccount(String email, String password) {

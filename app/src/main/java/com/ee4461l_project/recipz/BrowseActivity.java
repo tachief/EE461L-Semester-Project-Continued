@@ -13,10 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.InputStream;
+import java.text.DecimalFormat;
 
 public class BrowseActivity extends AppCompatActivity {
     TextView recipeTitles[] = new TextView[10];
     CardView recipeCards[] = new CardView[10];
+    TextView recipePublishers[] = new TextView[10];
+    TextView recipeRanks[] = new TextView[10];
     Recipes[] rec;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +47,28 @@ public class BrowseActivity extends AppCompatActivity {
         recipeCards[7] = findViewById(R.id.cardView7);
         recipeCards[8] = findViewById(R.id.cardView8);
         recipeCards[9] = findViewById(R.id.cardView9);
+
+        recipePublishers[0] = findViewById(R.id.recipePublisher0);
+        recipePublishers[1] = findViewById(R.id.recipePublisher1);
+        recipePublishers[2] = findViewById(R.id.recipePublisher2);
+        recipePublishers[3] = findViewById(R.id.recipePublisher3);
+        recipePublishers[4] = findViewById(R.id.recipePublisher4);
+        recipePublishers[5] = findViewById(R.id.recipePublisher5);
+        recipePublishers[6] = findViewById(R.id.recipePublisher6);
+        recipePublishers[7] = findViewById(R.id.recipePublisher7);
+        recipePublishers[8] = findViewById(R.id.recipePublisher8);
+        recipePublishers[9] = findViewById(R.id.recipePublisher9);
+
+        recipeRanks[0] = findViewById(R.id.recipeRank0);
+        recipeRanks[1] = findViewById(R.id.recipeRank1);
+        recipeRanks[2] = findViewById(R.id.recipeRank2);
+        recipeRanks[3] = findViewById(R.id.recipeRank3);
+        recipeRanks[4] = findViewById(R.id.recipeRank4);
+        recipeRanks[5] = findViewById(R.id.recipeRank5);
+        recipeRanks[6] = findViewById(R.id.recipeRank6);
+        recipeRanks[7] = findViewById(R.id.recipeRank7);
+        recipeRanks[8] = findViewById(R.id.recipeRank8);
+        recipeRanks[9] = findViewById(R.id.recipeRank9);
 
         Intent intent = getIntent();
         Bundle arg = intent.getBundleExtra("RECIPES");
@@ -180,8 +205,11 @@ public class BrowseActivity extends AppCompatActivity {
             }
         });
 
+        DecimalFormat df = new DecimalFormat("#.0");
         for(int i = 0; i <= 9; i++) {
             recipeTitles[i].setText(rec[i].getTitle());
+            recipePublishers[i].setText("From: " + rec[i].getPublisher());
+            recipeRanks[i].setText("Rank: " + df.format(rec[i].getSocial_rank()/20.0));
         }
 
     }

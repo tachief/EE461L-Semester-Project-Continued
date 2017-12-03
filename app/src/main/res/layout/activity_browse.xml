@@ -50,6 +50,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -90,6 +114,30 @@
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
+
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -128,6 +176,30 @@
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp"
                         android:adjustViewBounds="true" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -166,6 +238,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -204,6 +300,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -242,6 +362,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -280,6 +424,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -318,6 +486,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -356,6 +548,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
@@ -395,6 +611,30 @@
                         app:srcCompat="@drawable/common_full_open_on_phone"
                         tools:layout_editor_absoluteX="176dp"
                         tools:layout_editor_absoluteY="158dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/recipePublisher9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+
+                        <TextView
+                            android:id="@+id/recipeRank9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="TextView"
+                            android:textColor="@color/colorAccent"
+                            android:textSize="16dp" />
+                    </LinearLayout>
                 </LinearLayout>
 
             </android.support.v7.widget.CardView>
