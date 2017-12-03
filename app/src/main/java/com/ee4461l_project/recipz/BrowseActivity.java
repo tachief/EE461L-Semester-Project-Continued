@@ -12,7 +12,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
+
+import com.google.gson.Gson;
 
 import java.io.InputStream;
 
@@ -21,13 +24,16 @@ public class BrowseActivity extends AppCompatActivity {
     CardView recipeCards[] = new CardView[10];
     TextView recipePublishers[] = new TextView[10];
     RatingBar recipeRanks[] = new RatingBar[10];
+    TextView browseErrorMsg;
     Button nextButton;
     SearchResponse res;
     Recipes[] rec;
+    int page;
     static String searchParams;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        page = 1;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_browse);
 
@@ -75,12 +81,31 @@ public class BrowseActivity extends AppCompatActivity {
         recipeRanks[8] = findViewById(R.id.recipeRank8);
         recipeRanks[9] = findViewById(R.id.recipeRank9);
 
+        browseErrorMsg = findViewById(R.id.browseErrorMsg);
+        browseErrorMsg.setText("");
+        browseErrorMsg.setVisibility(View.GONE);
+
         Intent intent = getIntent();
         Bundle arg = intent.getBundleExtra("RECIPES");
         searchParams = intent.getStringExtra("SEARCH_PARAMS");
-        res = (SearchResponse)arg.getSerializable("LIST");
 
+        res = (SearchResponse)arg.getSerializable("LIST");
         rec = res.getRecipes();
+
+        try {
+            if (rec[0] == null || rec[1] == null || rec[2] == null || rec[3] == null || rec[4] == null || rec[5] == null || rec[6] == null || rec[7] == null || rec[8] == null || rec[9] == null) {
+                return;
+            }
+        }
+        catch (Exception e) {
+            for(int i = 0; i <= 9; i++) {
+                recipeCards[i].setVisibility(View.GONE);
+            }
+            browseErrorMsg.setText("No Recipes Found");
+            browseErrorMsg.setVisibility(View.VISIBLE);
+            findViewById(R.id.nextPageBtn).setVisibility(View.GONE);
+            return;
+        }
 
         updateUI();
 
@@ -88,13 +113,38 @@ public class BrowseActivity extends AppCompatActivity {
         nextButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                page++;
+                SearchActivity searchActivity = new SearchActivity();
+                String URL = searchActivity.parseUserInput(searchParams, page);
+                String out = "";
+                try{
+                    out = searchActivity.getRecipesString(URL);
+                } catch(Exception e) {
+                    Log.e("bad url", e.toString());
+                }
+                Gson gson = new Gson();
+                res = gson.fromJson(out, SearchResponse.class);
+                rec = res.getRecipes();
+                ScrollView scrollView = findViewById(R.id.recipeScroll);
+                scrollView.fullScroll(ScrollView.FOCUS_UP);
+                updateUI();
             }
         });
 
     }
 
     private void updateUI() {
+        try {
+            if (rec[0] == null || rec[1] == null || rec[2] == null || rec[3] == null || rec[4] == null || rec[5] == null || rec[6] == null || rec[7] == null || rec[8] == null || rec[9] == null) {
+                return;
+            }
+        }
+        catch (Exception e) {
+            Log.e("Exception Thrown", "No more recipes");
+            browseErrorMsg.setText("No More Recipes Found");
+            browseErrorMsg.setVisibility(View.VISIBLE);
+            return;
+        }
         new DownloadImageTask((ImageView) findViewById(R.id.recipeImage0))
                 .execute(rec[0].getImage_url());
         new DownloadImageTask((ImageView) findViewById(R.id.recipeImage1))
@@ -224,7 +274,7 @@ public class BrowseActivity extends AppCompatActivity {
         });
 
         for(int i = 0; i <= 9; i++) {
-            recipeTitles[i].setText(rec[i].getTitle());
+            recipeTitles[i].setText(rec[i].getTitle().substring(0, 1).toUpperCase() + rec[i].getTitle().substring(1));
             recipePublishers[i].setText(rec[i].getPublisher());
             recipeRanks[i].setRating((float) (rec[i].getSocial_rank()/20.0));
         }

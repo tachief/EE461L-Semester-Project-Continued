@@ -38,7 +38,7 @@
             android:layout_marginRight="20dp"
             android:layout_marginTop="20dp"
             android:gravity="center"
-            android:text="Enter the ingredients you would like too cook with!"
+            android:text="What will you be cooking with today?"
             android:textColor="@color/colorPrimary"
             android:textSize="30sp"
             android:textStyle="italic" />
