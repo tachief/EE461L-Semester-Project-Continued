@@ -33,7 +33,18 @@ class Recipes implements Serializable{
     String recipe_id;
     String image_url;
     Double social_rank;
-    String publsiher_url;
+    String publisher_url;
+
+    public Recipes(String publisher, String f2f_url, String title, String source_url, String recipe_id, String image_url, Double social_rank, String publisher_url) {
+        this.publisher = publisher;
+        this.f2f_url = f2f_url;
+        this.title = title;
+        this.source_url = source_url;
+        this.recipe_id = recipe_id;
+        this.image_url = image_url;
+        this.social_rank = social_rank;
+        this.publisher_url = publisher;
+    }
 
     public String getPublisher() {
         return publisher;
@@ -76,11 +87,11 @@ class Recipes implements Serializable{
     public void setSocial_rank(Double social_rank) {
         this.social_rank = social_rank;
     }
-    public String getPublsiher_url() {
-        return publsiher_url;
+    public String getPublisher_url() {
+        return publisher_url;
     }
-    public void setPublsiher_url(String publsiher_url) {
-        this.publsiher_url = publsiher_url;
+    public void setPublisher_url(String publisher_url) {
+        this.publisher_url = publisher_url;
     }
 }
 
