@@ -172,6 +172,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[0]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[0].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[0].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[0].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[0].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[0].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[0].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[0].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[0].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -280,7 +287,7 @@ public class BrowseActivity extends AppCompatActivity {
         }
     }
 
-    private class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
+    public static class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         ImageView bmImage;
 
         public DownloadImageTask(ImageView bmImage) {
