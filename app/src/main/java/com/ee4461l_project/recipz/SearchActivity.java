@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.gson.Gson;
 
 import java.net.MalformedURLException;
@@ -24,6 +25,7 @@ public class SearchActivity extends AppCompatActivity {
     private EditText editTextSearchTerms;
     private Button searchButton;
     private Button favoritesButton;
+    private Button logoutButton;
     private static String sURL = "http://food2fork.com/api/search?key=02a03461cd295f9dcf90a669c961e2fd&q=shredded%20chicken";
 
     class GetRecipeFeed extends AsyncTask<URL, Void, String> {
@@ -55,6 +57,16 @@ public class SearchActivity extends AppCompatActivity {
         editTextSearchTerms = findViewById(R.id.inputEditText);
         searchButton = findViewById(R.id.searchButton);
         favoritesButton = findViewById(R.id.favoritesButton);
+        logoutButton = findViewById(R.id.logoutButton);
+
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FirebaseAuth.getInstance().signOut();
+                Intent changeToInitialActivity = new Intent(getApplicationContext(), InitialActivity.class);
+                startActivity(changeToInitialActivity);
+            }
+        });
 
         searchButton.setOnClickListener(new View.OnClickListener() {    //creates search button
             public void onClick(View view) {
