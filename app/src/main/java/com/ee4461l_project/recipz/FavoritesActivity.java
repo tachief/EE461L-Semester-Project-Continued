@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
@@ -66,17 +67,18 @@ public class FavoritesActivity extends AppCompatActivity {
         Log.e("favList[6]", readString);
         Gson gson = new Gson();
 
-        CardView cardView0 = findViewById(R.id.cardView0);
-        ImageView imageView0 = findViewById(R.id.recipeImage0);
-        TextView recipeTitle0 = findViewById(R.id.recipeTitle0);
-        TextView recipePublisher0 = findViewById(R.id.recipePublisher0);
+        CardView cardView0 = findViewById(R.id.cardFavorite0);
+        ImageView imageView0 = findViewById(R.id.favoriteImage0);
+        TextView recipeTitle0 = findViewById(R.id.favoriteTitle0);
+        TextView recipePublisher0 = findViewById(R.id.favoritePublisher0);
+        RatingBar recipeRank = findViewById(R.id.favoriteRank0);
         FavoritesResponse favResponse = gson.fromJson(readString, FavoritesResponse.class);
         ArrayList<Recipes> favList = favResponse.getRecipes();
         recipeTitle0.setText(favList.get(0).getTitle());
         recipePublisher0.setText(favList.get(0).getPublisher());
-        new BrowseActivity.DownloadImageTask((ImageView) findViewById(R.id.recipeImage0))
+        new BrowseActivity.DownloadImageTask((ImageView) findViewById(R.id.favoriteImage0))
                 .execute(favList.get(0).getImage_url());
-
+        recipeRank.setRating((float) (favList.get(0).getSocial_rank()/20.0));
 
 
     }

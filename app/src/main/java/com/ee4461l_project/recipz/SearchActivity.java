@@ -88,7 +88,6 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 toFavorites();
-
             }
         });
 
@@ -145,7 +144,7 @@ public class SearchActivity extends AppCompatActivity {
     }
     //takes user to favorites activity
     public void toFavorites() {
-        Intent intent = new Intent(this, FavoritesActivity.class);
+        Intent intent = new Intent(getApplicationContext(), FavoritesActivity.class);
         startActivity(intent);
 
     }

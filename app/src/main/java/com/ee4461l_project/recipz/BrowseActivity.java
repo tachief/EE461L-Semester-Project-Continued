@@ -189,6 +189,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[1]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[1].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[1].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[1].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[1].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[1].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[1].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[1].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[1].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -199,6 +206,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[2]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[2].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[2].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[2].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[2].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[2].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[2].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[2].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[2].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -210,6 +224,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[3]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[3].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[3].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[3].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[3].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[3].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[3].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[3].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[3].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -221,6 +242,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[4]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[4].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[4].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[4].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[4].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[4].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[4].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[4].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[4].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -232,6 +260,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[5]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[5].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[5].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[5].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[5].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[5].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[5].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[5].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[5].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -243,6 +278,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[6]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[6].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[6].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[6].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[6].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[6].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[6].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[6].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[6].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -254,6 +296,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[7]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[7].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[7].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[7].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[7].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[7].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[7].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[7].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[7].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -265,6 +314,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[8]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[8].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[8].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[8].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[8].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[8].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[8].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[8].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[8].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
@@ -275,6 +331,13 @@ public class BrowseActivity extends AppCompatActivity {
                 if(view == recipeCards[9]) {
                     Intent changeToRecipeViewActivity = new Intent(getApplicationContext(), RecipeViewActivity.class);
                     changeToRecipeViewActivity.putExtra("sourceURL", rec[9].getSource_url());
+                    changeToRecipeViewActivity.putExtra("title", rec[9].getTitle());
+                    changeToRecipeViewActivity.putExtra("imageURL", rec[9].getImage_url());
+                    changeToRecipeViewActivity.putExtra("socialRank", rec[9].getSocial_rank());
+                    changeToRecipeViewActivity.putExtra("f2fURL", rec[9].getF2f_url());
+                    changeToRecipeViewActivity.putExtra("publisherURL", rec[9].getPublisher_url());
+                    changeToRecipeViewActivity.putExtra("publisher", rec[9].getPublisher());
+                    changeToRecipeViewActivity.putExtra("recipeId", rec[9].getRecipe_id());
                     startActivity(changeToRecipeViewActivity);
                 }
             }
