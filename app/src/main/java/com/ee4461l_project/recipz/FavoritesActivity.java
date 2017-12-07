@@ -57,12 +57,14 @@ public class FavoritesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_favorites);
 
         String readString ;
-        FileInputStream fIn = null;
+        FileInputStream fIn;
         try {
             fIn = openFileInput("Favorites");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            return;
         }
+        
         readString = new Scanner(fIn,"UTF-8").useDelimiter("\\A").next();
         Log.e("favList[6]", readString);
         Gson gson = new Gson();

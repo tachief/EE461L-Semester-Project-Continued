@@ -43,7 +43,7 @@ class Recipes implements Serializable{
         this.recipe_id = recipe_id;
         this.image_url = image_url;
         this.social_rank = social_rank;
-        this.publisher_url = publisher;
+        this.publisher_url = publisher_url;
     }
 
     public String getPublisher() {
